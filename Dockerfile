@@ -17,6 +17,7 @@ RUN composer install --prefer-dist --no-scripts --no-dev --no-autoloader && rm -
 COPY --chown=app:root . ./
 
 
+
 # Finish composer
 #RUN composer dump-autoload
 RUN composer dump-autoload --no-scripts --no-dev --optimize

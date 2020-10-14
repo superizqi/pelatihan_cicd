@@ -7,7 +7,7 @@ language: php
 dist: trusty
 
 php:
-  - '7.3'
+  - '7.1'
 # service yang digunakan
 services:
   - docker
@@ -20,8 +20,6 @@ jobs:
       script:
       - travis_retry composer self-update
       - travis_retry composer install --prefer-source --no-interaction
-      - composer self-update
-      - composer install --prefer-source --no-interaction
       - cp .env.example .env
       - php artisan key:generate
       - vendor/bin/phpunit tests/Feature/ExampleTest.php
